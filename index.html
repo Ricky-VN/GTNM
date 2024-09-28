@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6f9fc;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: #fff;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #222;
+            font-size: 16px;
+        }
+
+        .auth-buttons a {
+            margin-left: 20px;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #00c1a1;
+            color: #00c1a1;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .auth-buttons a.signup {
+            background-color: #00c1a1;
+            color: #fff;
+        }
+
+        /* Style for login/signup section */
+        .auth-container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .tab button {
+            background-color: #f6f9fc;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .tab button.active {
+            border-bottom: 2px solid #00c1a1;
+            font-weight: bold;
+        }
+
+        .form-container {
+            display: none;
+        }
+
+        .form-container.active {
+            display: block;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #00c1a1;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #009688;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="cv.html">About</a></li>
+                <li><a href="#">Labs</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <!-- Login/Signup Section -->
+    <div class="auth-container">
+        <div class="tab">
+            <button class="tablinks active" onclick="openForm(event, 'login')">Đăng nhập</button>
+            <button class="tablinks" onclick="openForm(event, 'signup')">Đăng ký</button>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login" class="form-container active">
+            <form>
+                <input type="text" placeholder="Tên đăng nhập" required>
+                <input type="password" placeholder="Mật khẩu" required>
+                <button type="submit">Đăng nhập</button>
+            </form>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signup" class="form-container">
+            <form>
+                <input type="text" placeholder="Tên đăng nhập" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Mật khẩu" required>
+                <input type="password" placeholder="Xác nhận mật khẩu" required>
+                <button type="submit">Đăng ký</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openForm(evt, formName) {
+            var i, formContainer, tablinks;
+
+            // Hide all form containers
+            formContainer = document.getElementsByClassName("form-container");
+            for (i = 0; i < formContainer.length; i++) {
+                formContainer[i].style.display = "none";
+            }
+
+            // Remove the active class from all tabs
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current form, and add the "active" class to the button that opened the form
+            document.getElementById(formName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Display login form by default
+        document.getElementById("login").style.display = "block";
+    </script>
+
+</body>
+</html>
