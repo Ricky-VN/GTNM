@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web - Lab1</title>
+    <title>My Web</title>
     <style> 
         * {
             margin: 0;
@@ -17,7 +17,7 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background-image: url('images/111.jpg');
+            background-image: url('images/mmorpg.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -59,10 +59,10 @@
         }
 
         .auth-container {
-            max-width: 400px; /* Giảm chiều rộng */
-            margin: 50px auto; /* Giảm margin trên và dưới */
+            max-width: 400px;
+            margin: 50px auto;
             background-color: rgba(255, 255, 255, 0.9);
-            padding: 20px; /* Giảm padding */
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
@@ -173,6 +173,64 @@
         .controls {
             margin-top: 10px;
         }
+
+        .body-login {
+            width: 350px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.5);
+            margin-top: 100px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .font-login {
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            color: #2980b9;
+            padding-bottom: 15px;
+        }
+
+        .input-name {
+            padding-bottom: 20px;
+        }
+
+        .item-input {
+            display: flex;
+            gap: 10px;
+            padding-top: 5px;
+        }
+
+        .input-name input {
+            height: 35px;
+            width: calc(100% - 10px);
+            border: 1px solid #bdc3c7;
+            padding: 0 5px;
+            border-radius: 5px;
+        }
+
+        .btn-login {
+            height: 40px;
+            border: none;
+            font-size: 18px;
+            width: 100%;
+            border-radius: 20px;
+            background: linear-gradient(to right, #1e90ff, #ff4500);
+            margin-top: 20px;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        .btn-login:hover {
+            background: linear-gradient(to right, #ff4500, #1e90ff);
+        }
+
+        .register {
+            padding-top: 15px;
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
@@ -181,31 +239,35 @@
         <div class="logo">My Web</div>
         <nav class="nav-menu">
             <div class="img-logo">
-                <img src="./images/nonglam.webp" alt="">
+                <img src="./images/nonglam.svg" alt="">
             </div>
             <ul>
-                <li><a href="#">Home</a></li>4
+                <li><a href="#">Home</a></li>
                 <li><a href="">About</a></li>
                 <li><a href="./lab/lab1.html">Labs</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="auth-container">
-        <div class="tab">
-            <button class="tablinks active" onclick="openForm(event, 'login')">Sign In</button>
-            <button class="tablinks" onclick="openForm(event, 'signup')">Sign Up</button>
+    <div class="body-login">
+        <div class="font-login">Login</div>
+        <div class="input-name">
+            <div>Username</div>
+            <div class="item-input">
+                <img src="./images/user.svg" alt="">
+                <input type="text">
+            </div>
         </div>
-
-        <div id="login" class="form-container active">
-            <form>
-                <input type="text" placeholder="Username" required>
-                <input type="password" placeholder="Password" required>
-                <a href="/forgot-password" class="forgot-password">Forgot password?</a>
-                <button type="submit">Sign In</button>
-                
-            </form>
+        <div class="input-name">
+            <div>Password</div>
+            <div class="item-input">
+                <img src="./images/lock.svg" alt="">
+                <input type="text">
+            </div>
         </div>
+        <button class="btn-login">Login</button>
+        <div class="register">Register an account <a href="/register">here</a></div>
+    </div>
 
         <div id="signup" class="form-container">
             <form>
@@ -236,88 +298,5 @@
             </form>
         </div>
     </div>
-
-    <script>
-        function openForm(evt, formName) {
-            var i, formContainer, tablinks;
-
-            formContainer = document.getElementsByClassName("form-container");
-            for (i = 0; i < formContainer.length; i++) {
-                formContainer[i].style.display = "none";
-            }
-
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-
-            document.getElementById(formName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-
-        document.getElementById("login").style.display = "block"; // Display login form by default
-    </script>
-
-    <div class="dashboard" style="display: none;">
-        <h1>Các bài tập có sẵn</h1>
-        <div class="filter">
-            <select id="language-filter">
-                <option value="all">Tất cả ngôn ngữ</option>
-                <option value="c">C</option>
-                <option value="python">Python</option>
-                <option value="java">Java</option>
-            </select>
-            <input type="text" id="search" placeholder="Tìm kiếm bài tập...">
-        </div>
-        <div class="exercises">
-            <div class="exercise">
-                <h2>Tiêu đề bài tập 1</h2>
-                <p>Mô tả ngắn gọn về bài tập 1.</p>
-                <p>Độ khó: Dễ</p>
-                <p>Thời gian giới hạn: 30 phút</p>
-                <button onclick="selectExercise('exercise1')">Chọn Bài Tập</button>
-            </div>
-            <div class="exercise">
-                <h2>Tiêu đề bài tập 2</h2>
-                <p>Mô tả ngắn gọn về bài tập 2.</p>
-                <p>Độ khó: Trung bình</p>
-                <p>Thời gian giới hạn: 45 phút</p>
-                <button onclick="selectExercise('exercise2')">Chọn Bài Tập</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="coding-environment" style="display: none;">
-        <h1 id="exercise-title">Tiêu đề bài tập</h1>
-        <p id="exercise-description">Mô tả bài tập ở đây.</p>
-        <textarea id="code-editor" rows="10" cols="50" placeholder="Viết mã của bạn ở đây..."></textarea>
-        <div class="controls">
-            <button id="run-code">Chạy Mã</button>
-            <button id="clear-code">Xóa Mã</button>
-            <button id="submit-code">Nộp Mã</button>
-        </div>
-        <div class="results">
-            <h2>Kết quả</h2>
-            <p>Trạng thái: <span id="status"></span></p>
-            <p>Đầu ra: <span id="output"></span></p>
-        </div>
-        <button onclick="returnToDashboard()">Quay lại bảng điều khiển</button>
-    </div>
-
-    <script>
-        function selectExercise(exerciseId) {
-            document.querySelector('.dashboard').style.display = 'none';
-            document.querySelector('.coding-environment').style.display = 'block';
-
-            document.getElementById('exercise-title').textContent = 'Tiêu đề bài tập ' + exerciseId.charAt(exerciseId.length - 1);
-            document.getElementById('exercise-description').textContent = 'Mô tả chi tiết cho ' + exerciseId;
-        }
-
-        function returnToDashboard() {
-            document.querySelector('.coding-environment').style.display = 'none';
-            document.querySelector('.dashboard').style.display = 'block';
-        }
-    </script>
-
-</body>
-</html>
+    </body>
+    </html>
