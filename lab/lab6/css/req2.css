@@ -53,6 +53,9 @@ body {
     gap: 20px;
     background-color: #fff;
 }
+.text-center select:hover {
+    cursor: pointer;
+}
 .label {
     width: 150px;
     display: block;
@@ -86,6 +89,7 @@ body {
     border-radius: 5px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .btn-page2 button img {
     width: 20px;
@@ -98,4 +102,7 @@ body {
 }
 .btn-page2 a{
     width: 100%;
+}
+.btn-page2 button:hover {
+    cursor: pointer;
 }
