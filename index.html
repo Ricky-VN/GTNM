@@ -4,20 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Web</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-
     <header>
         <div class="logo">My Web</div>
         <nav class="nav-menu">
             <div class="img-logo">
-                <img src="./img/nonglam.svg" alt="">
+                <img src="./img/nonglam.svg" alt="Logo">
             </div>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="./lab/lab6/lab6.html">Labs</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li>
+                    <a href="#">Labs</a>
+                    <ul>
+                        <li><a href="./lab/lab1/lab1.html">Lab 1</a></li>
+                        <li><a href="./lab/lab2/lab2.html">Lab 2</a></li>
+                        <li><a href="./lab/lab3/lab3.html">Lab 3</a></li>
+                        <li><a href="./lab/lab4/lab4.html">Lab 4</a></li>
+                        <li><a href="./lab/lab5/lab5.html">Lab 5</a></li>
+                        <li><a href="./lab/lab6/lab6.html">Lab 6</a></li>
+                    </ul>
+                </li>
+                <li> <a href="result.html">Result</a></li>
             </ul>
         </nav>
     </header>
@@ -27,49 +37,19 @@
         <div class="input-name">
             <div>Username</div>
             <div class="item-input">
-                <img src="./img/user.svg" alt="">
-                <input type="text">
+                <img src="./img/user.svg" alt="User Icon">
+                <input type="text" placeholder="Enter your username">
             </div>
         </div>
         <div class="input-name">
             <div>Password</div>
             <div class="item-input">
-                <img src="./img/lock.svg" alt="">
-                <input type="text">
+                <img src="./img/lock.svg" alt="Lock Icon">
+                <input type="password" placeholder="Enter your password">
             </div>
         </div>
         <button class="btn-login">Login</button>
         <div class="register">Register an account <a href="/register">here</a></div>
     </div>
-
-        <div id="signup" class="form-container">
-            <form>
-                <label>Username</label>
-                <input type="text" placeholder="Enter your username." required>
-
-                <label>Password</label>
-                <input type="password" id="password" placeholder="Enter your password." required>
-
-                <label>Email Address</label>
-                <input type="email" placeholder="Enter your email." required>
-
-                <label>Full Name (optional)</label>
-                <input type="text" placeholder="Enter your full name.">
-
-                <label>Role</label>
-                <select required>
-                    <option value="">Select a role</option>
-                    <option value="admin">Admin</option>
-                    <option value="user">User</option>
-                </select>
-
-                <label>Profile Picture</label>
-                <input type="file" accept="image/*">
-
-                <button type="submit">Create Account</button>
-                <button type="button" class="cancel-btn" id="cancelBtn">Cancel</button>
-            </form>
-        </div>
-    </div>
-    </body>
-    </html>
+</body>
+</html>
